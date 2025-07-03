@@ -10,13 +10,13 @@ from transformers import (
     set_seed
 )
 
-# Load models
+
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 blip_model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 text_generator = pipeline("text-generation", model="gpt2")
 set_seed(42)
 
-# Load dataset for hashtag generation
+
 ds = load_dataset("kkcosmos/instagram-images-with-captions", split="train")
 
 def limit_caption_length(text, max_words=25):
