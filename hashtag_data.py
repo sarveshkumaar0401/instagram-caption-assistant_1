@@ -1,7 +1,5 @@
 import random
-from datasets import load_dataset
-
-# Load dataset only once
+from datasets import load_datase
 ds = load_dataset("kkcosmos/instagram-images-with-captions", split="train")
 
 def get_trending_hashtags(context):
